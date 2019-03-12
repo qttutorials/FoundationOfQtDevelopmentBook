@@ -15,7 +15,7 @@
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QHeaderView>
-#include <QtWidgets/QListView>
+#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -32,12 +32,12 @@ public:
     QWidget *centralWidget;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout;
-    QListView *listView;
     QVBoxLayout *verticalLayout;
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_2;
+    QPushButton *pushButtonAdd;
+    QPushButton *pushButtonEdit;
+    QPushButton *pushButtonDel;
+    QPushButton *pushButtonClear;
+    QListWidget *listWidget;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -57,36 +57,36 @@ public:
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QStringLiteral("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        listView = new QListView(formLayoutWidget);
-        listView->setObjectName(QStringLiteral("listView"));
-
-        formLayout->setWidget(1, QFormLayout::LabelRole, listView);
-
         verticalLayout = new QVBoxLayout();
         verticalLayout->setSpacing(6);
         verticalLayout->setObjectName(QStringLiteral("verticalLayout"));
-        pushButton = new QPushButton(formLayoutWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButtonAdd = new QPushButton(formLayoutWidget);
+        pushButtonAdd->setObjectName(QStringLiteral("pushButtonAdd"));
 
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(pushButtonAdd);
 
-        pushButton_3 = new QPushButton(formLayoutWidget);
-        pushButton_3->setObjectName(QStringLiteral("pushButton_3"));
+        pushButtonEdit = new QPushButton(formLayoutWidget);
+        pushButtonEdit->setObjectName(QStringLiteral("pushButtonEdit"));
 
-        verticalLayout->addWidget(pushButton_3);
+        verticalLayout->addWidget(pushButtonEdit);
 
-        pushButton_4 = new QPushButton(formLayoutWidget);
-        pushButton_4->setObjectName(QStringLiteral("pushButton_4"));
+        pushButtonDel = new QPushButton(formLayoutWidget);
+        pushButtonDel->setObjectName(QStringLiteral("pushButtonDel"));
 
-        verticalLayout->addWidget(pushButton_4);
+        verticalLayout->addWidget(pushButtonDel);
 
-        pushButton_2 = new QPushButton(formLayoutWidget);
-        pushButton_2->setObjectName(QStringLiteral("pushButton_2"));
+        pushButtonClear = new QPushButton(formLayoutWidget);
+        pushButtonClear->setObjectName(QStringLiteral("pushButtonClear"));
 
-        verticalLayout->addWidget(pushButton_2);
+        verticalLayout->addWidget(pushButtonClear);
 
 
         formLayout->setLayout(1, QFormLayout::FieldRole, verticalLayout);
+
+        listWidget = new QListWidget(formLayoutWidget);
+        listWidget->setObjectName(QStringLiteral("listWidget"));
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, listWidget);
 
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -107,11 +107,11 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", 0));
-        pushButton->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_3->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_4->setText(QApplication::translate("MainWindow", "PushButton", 0));
-        pushButton_2->setText(QApplication::translate("MainWindow", "PushButton", 0));
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "Phone Book", 0));
+        pushButtonAdd->setText(QApplication::translate("MainWindow", "Add", 0));
+        pushButtonEdit->setText(QApplication::translate("MainWindow", "Edit", 0));
+        pushButtonDel->setText(QApplication::translate("MainWindow", "Delete", 0));
+        pushButtonClear->setText(QApplication::translate("MainWindow", "Clear", 0));
     } // retranslateUi
 
 };

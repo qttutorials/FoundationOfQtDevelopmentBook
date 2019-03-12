@@ -60,6 +60,11 @@ public:
 
         lineEditName = new QLineEdit(formLayoutWidget);
         lineEditName->setObjectName(QStringLiteral("lineEditName"));
+        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
+        sizePolicy.setHorizontalStretch(100);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(lineEditName->sizePolicy().hasHeightForWidth());
+        lineEditName->setSizePolicy(sizePolicy);
 
         formLayout->setWidget(0, QFormLayout::FieldRole, lineEditName);
 
@@ -74,6 +79,7 @@ public:
 
         formLayout->setWidget(2, QFormLayout::FieldRole, buttonBox);
 
+        QWidget::setTabOrder(lineEditName, lineEditNumber);
 
         retranslateUi(Dialog);
         QObject::connect(buttonBox, SIGNAL(accepted()), Dialog, SLOT(accept()));

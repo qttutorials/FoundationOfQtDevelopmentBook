@@ -15,6 +15,12 @@ public:
     explicit Dialog(QWidget *parent = 0);
     ~Dialog();
 
+    const QString getName() const;
+    void setName(const QString&);
+
+    const QString getNumber() const;
+    void setNumber(const QString&);
+
 private:
     Ui::Dialog *ui;
 };
