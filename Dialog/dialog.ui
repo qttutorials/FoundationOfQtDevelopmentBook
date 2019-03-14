@@ -43,8 +43,8 @@
     <item row="0" column="1">
      <widget class="QLineEdit" name="lineEditName">
       <property name="sizePolicy">
-       <sizepolicy hsizetype="Maximum" vsizetype="Maximum">
-        <horstretch>100</horstretch>
+       <sizepolicy hsizetype="Ignored" vsizetype="Maximum">
+        <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>

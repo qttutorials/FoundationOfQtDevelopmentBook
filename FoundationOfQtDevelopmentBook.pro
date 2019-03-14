@@ -2,4 +2,5 @@ TEMPLATE = subdirs
 
 SUBDIRS += \
     ThefirstApp \
-    Dialog
+    Dialog \
+    Ch4_MainWindow

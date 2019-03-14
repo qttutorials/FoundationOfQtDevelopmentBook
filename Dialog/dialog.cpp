@@ -6,6 +6,9 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+
+    //Chỉ cho phép nhập số.
+    ui->lineEditNumber->setValidator(new QIntValidator());
 }
 
 Dialog::~Dialog()

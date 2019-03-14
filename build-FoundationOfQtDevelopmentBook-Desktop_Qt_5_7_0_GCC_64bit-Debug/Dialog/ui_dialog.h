@@ -60,8 +60,8 @@ public:
 
         lineEditName = new QLineEdit(formLayoutWidget);
         lineEditName->setObjectName(QStringLiteral("lineEditName"));
-        QSizePolicy sizePolicy(QSizePolicy::Maximum, QSizePolicy::Maximum);
-        sizePolicy.setHorizontalStretch(100);
+        QSizePolicy sizePolicy(QSizePolicy::Ignored, QSizePolicy::Maximum);
+        sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(lineEditName->sizePolicy().hasHeightForWidth());
         lineEditName->setSizePolicy(sizePolicy);
